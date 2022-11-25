@@ -29,6 +29,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         lista = findViewById(R.id.lv_lista);
-        lista.setAdapter(new Adaptador(getApplicationContext(), datos, imagenes));
+        lista.setAdapter(new Adaptador(this, datos, imagenes));
     }
 }

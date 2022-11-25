@@ -9,7 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class Adaptador extends BaseAdapter {
 
@@ -39,11 +38,10 @@ public class Adaptador extends BaseAdapter {
         duracion.setText("Duración: " + datos[i][2]);
         calificacion.setProgress(Integer.parseInt(datos[i][3]));
         imagen.setImageResource(imagenes[i]);
-
-        imagen.setTag(i);
+        //imagen.setTag(i);
         imagen.setOnClickListener(listener -> {
             Intent intent = new Intent(context, VisorImagen.class);
-            intent.putExtra("img", 1);
+            intent.putExtra("img", imagenes[i]);
             context.startActivity(intent);
         });
 
