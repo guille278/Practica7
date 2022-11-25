@@ -15,11 +15,20 @@ public class MainActivity extends AppCompatActivity {
             {"titulo 4", "director 4", "1:30", "10", "descripcion 4"},
             {"titulo 5", "director 5", "1:30", "10", "descripcion 5"}
     };
+
+    int[] imagenes = {
+            R.drawable.img1,
+            R.drawable.img2,
+            R.drawable.img3,
+            R.drawable.img4,
+            R.drawable.img5,
+    };
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         lista = findViewById(R.id.lv_lista);
-
+        lista.setAdapter(new Adaptador(getApplicationContext(), datos, imagenes));
     }
 }
